@@ -2,11 +2,12 @@
 """Module that launches multiple asyncio Tasks and returns their
 results in order of completion."""
 
+import typing
 import asyncio
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
-async def task_wait_n(n: int, max_delay: int) -> list[float]:
+async def task_wait_n(n: int, max_delay: int) -> typing.List[float]:
     """Run task_wait_random n times and return the list of delays
     as they complete.
 
@@ -18,7 +19,7 @@ async def task_wait_n(n: int, max_delay: int) -> list[float]:
         list[float]: Delays in ascending order of completion.
     """
     tasks = [task_wait_random(max_delay) for _ in range(n)]
-    delays = []
+    delays: typing.List[float] = []
 
     for task in asyncio.as_completed(tasks):
         result = await task
