@@ -1,0 +1,2 @@
+// Insertion d'une collection avec un attribut/value dans la database
+db.school.insertOne({ name: "Holberton school" })
