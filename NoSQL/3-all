@@ -1,0 +1,2 @@
+// Ecrire un script qui liste les documents d'une collection
+db.school.find()
