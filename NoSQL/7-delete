@@ -1,0 +1,2 @@
+// Script pour supprimer tout les documents qui on un name: "blabla"
+db.school.remove({ name: 'Holberton school' });
