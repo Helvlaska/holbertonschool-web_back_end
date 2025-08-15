@@ -1,0 +1,2 @@
+// Script pour utiliser ou créer une database
+use('my_db');
