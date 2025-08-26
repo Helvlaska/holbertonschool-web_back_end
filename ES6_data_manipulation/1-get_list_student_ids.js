@@ -3,10 +3,7 @@ export default function getListStudentIds(array) {
     return [];
   }
   else {
-    const ids = []
-    for (let i in array) {
-      ids.push(array[i].id);
-    }
+    const ids = array.map(array => array.id)
     return ids;
   }
 }
