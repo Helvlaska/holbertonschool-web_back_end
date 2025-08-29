@@ -1,17 +1,17 @@
 export default function cleanSet(set, startString) {
-  // Vérifie si startString est vide
-  if (startString === "") {
-    return "";
-  }
+  // Vérifie si startString est une string vide
+  if (startString === '') return '';
 
-  const cleanValue = [];           // Création d'une variable pour stocker les nouvelles values
+  const arrayFromSet = Array.from(set);     // Transforme le set en array
 
-  for (const value of set) {        // Boucle pour parcourir les valeurs du set
-    if (value.startsWith(startString)) {    // Vérifie si value commence par startString
-      const cleanStartValue = value.slice(startString.length);   // Retire startString de value
-      cleanValue.push(cleanStartValue);     // Envoie des nouvelles values dans le tableau
-    }
-  }
+  // Garder que les values qui commencent par startString
+  const filtered = arrayFromSet.filter(value => value.startsWith(startString));
 
-  return cleanValue.join("-");                // Retourne la nouvelle string fromatée
+  // Retire startString des values
+  const cleaned = filtered.map(value => value.slice(startString.length));
+
+  // Formatage de la string
+  const result = cleaned.join('-');
+
+  return result;
 }
