@@ -1,14 +1,16 @@
-// Affiche la question dans la console
-console.log("Welcome to Holberton School, what is your name?");
+// Affiche un message en console
+process.stdout.write("Welcome to Holberton School, what is your name?\n");
 
-// Permet au user de faire une entrée de donnée
+// Permet l'entré de données par le user
 process.stdin.on("data", (data) => {
-  // Convertie la donnée en string et la nettoie des espaces
+  // Convertie l'entrée en string et la nettoie de ses espaces
   const name = data.toString().trim();
-  console.log(`Your name is: ${name}`);
-})
+  // Affiche le message en console avec la nouvelle donnée
+  process.stdout.write(`Your name is: ${name}\n`);
+});
 
-// fermeture de l'entrée de données
+// Fermeture de l'entrée de donnée
 process.stdin.on("end", () => {
-  console.log("This important software is now closing");
+  // Affiche du message de fermeture
+  process.stdout.write("This important software is now closing\n");
 });
