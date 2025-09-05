@@ -37,10 +37,10 @@ function countStudents(path) {
 
     // Boucle pour lire chaque liste de fillière
     for (const field in fields) {
-      // Récupère les listes
-      const list = fields[field];
-      // Mise en forme des infos dans la console
-      console.log(`Number of students in ${field}: ${list.length}. List: ${list.join(', ')}`);
+      if (Object.hasOwn(fields, field)) {
+        const list = fields[field];
+        console.log(`Number of students in ${field}: ${list.length}. List: ${list.join(', ')}`);
+      }
     }
   } catch (err) {
     throw new Error('Cannot load the database');
