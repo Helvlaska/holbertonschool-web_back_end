@@ -10,7 +10,6 @@ const app = http.createServer((req, res) => {
 });
 
 // Demande au serveur de rester à l'écoute
-// eslint-disable-next-line jest/require-hook
 app.listen(1245);
 
 // Permet l'exportation de la fonction dans d'autres modules
